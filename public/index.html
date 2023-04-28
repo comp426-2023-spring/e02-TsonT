@@ -1,12 +1,46 @@
 <html>
-    <head>
-        <title>Rock</title>
-        <!-- Link to your script file(s) and CSS in here somewhere -->
-    </head>
-    <body>
+
+<head>
+    <title>Rock</title>
+    <link rel="stylesheet" href="./styles.css">
+    <script src="./scripts.js" defer></script>
+</head>
+
+<body>
 
     <!-- Your interface markup goes here -->
     <!-- For interface examples, look in the `/examples/` directory in the root of your starter code repo. -->
+    <div id="wrapper">
+        <h1>Rock Paper Scissors (Lizard Spock)</h1>
+        <h2 id="result"></h2>
+        <form name="gameForm">
+            <div id="game_options">
+                <label>Choose a game mode:</label><br>
+                <input type="radio" name="game_mode" value="RPS" class="game_mode" checked> RPS<br>
+                <input type="radio" name="game_mode" value="RPSLS" class="game_mode"> RPSLS<br><br>
+                <label>Would you like to play against an opponent?</label>
+                <input type="checkbox" id="opponent_checkbox"><br>
+                <div id="shot_options_container">
+                    <label>Choose your shot:</label><br>
+                    <input type="radio" name="shot" value="rock" class="shot_options" checked> Rock<br>
+                    <input type="radio" name="shot" value="paper" class="shot_options"> Paper<br>
+                    <input type="radio" name="shot" value="scissors" class="shot_options"> Scissors<br>
+                    <div id="RPSLS_options">
+                        <input type="radio" name="shot" value="lizard" class="shot_options"> Lizard<br>
+                        <input type="radio" name="shot" value="spock" class="shot_options"> Spock<br>
+                    </div>
+                    <br>
+                </div>
+            </div>
+            <button type="button" id="play_button">Play</button>
+            <button type="button" id="start_over_button">Start Over</button>
+        </form>
+    </div>
+    <div id="rules_container">
+        <button type="button" id="rules_button">Display Rules</button>
+        <h3 id="rules_text"></h3>
+    </div>
 
-    </body>
+</body>
+
 </html>

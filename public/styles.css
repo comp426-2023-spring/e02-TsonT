@@ -1,8 +1,66 @@
 body {
+  background-color: #f2f2f2;
+  font-family: Arial, sans-serif;
+}
+
+#wrapper {
+  margin: auto;
+  width: 50%;
+  background-color: white;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
 }
 
 h1 {
+  text-align: center;
 }
 
-p {
+label {
+  font-weight: bold;
+}
+
+#RPSLS_options {
+  display: none;
+}
+
+#shot_options_container {
+  margin-top: 10px;
+  display: none;
+}
+
+button {
+  margin-top: 10px;
+  padding: 10px;
+  border-radius: 5px;
+  border: none;
+  color: white;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+#play_button {
+  background-color: #4caf50;
+}
+
+#start_over_button {
+  background-color: #f44336;
+}
+
+button:hover {
+  opacity: 0.8;
+}
+
+button:active {
+  transform: translateY(2px);
+}
+
+#rules_button {
+  background-color: #4285f4;
+}
+
+#rules_container {
+  width: 50%;
+  height: fit-content;
+  margin: auto;
 }
