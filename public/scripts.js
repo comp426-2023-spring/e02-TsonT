@@ -43,10 +43,17 @@ Array.from(shotOptions).forEach((shotOption) => {
 var playButton = document.getElementById("play_button");
 var startOverButton = document.getElementById("start_over_button");
 var gameOptions = document.getElementById("game_options");
-var result = document.getElementById("result");
+var title = document.getElementById("title");
+var gameForm = document.getElementById("game_form");
+var result;
 
-playButton.addEventListener("click", () => {
+gameForm.addEventListener("submit", (e) => {
+  e.preventDefault();
+
   let endpoint = "";
+
+  result = document.createElement("h2");
+  title.after(result);
 
   if (selectedGameMode === "RPS") {
     endpoint = "http://localhost:5000/app/rps/play";
@@ -91,7 +98,7 @@ async function getPlayAlone(endpoint) {
 
 startOverButton.addEventListener("click", () => {
   gameOptions.style.display = "block";
-  result.innerHTML = "";
+  result.remove();
   playButton.style.display = "inline-block";
 
   document.gameForm.game_mode.value = "RPS";
@@ -105,18 +112,21 @@ function triggerEvent(element, eventName) {
   element.dispatchEvent(event);
 }
 
+var rules_container = document.getElementById("rules_container");
 var rules_button = document.getElementById("rules_button");
-var rules_text = document.getElementById("rules_text");
+var rules_text;
 var rulesDisplayed = false;
 
 rules_button.addEventListener("click", () => {
   console.log(rulesDisplayed);
   if (rulesDisplayed) {
     rules_button.innerHTML = "Display Rules";
-    rules_text.innerHTML = "";
+    rules_text.remove();
     rulesDisplayed = false;
   } else {
     rules_button.innerHTML = "Hide Rules";
+    rules_text = document.createElement("h3");
+    rules_container.appendChild(rules_text);
     rules_text.innerHTML = `Rules for Rock Paper Scissors:<br>
 
     - Scissors CUTS Paper<br>
